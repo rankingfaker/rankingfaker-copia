@@ -1,11 +1,15 @@
 #!/bin/bash
 
 archivo_entrada="10000pi.txt"
-archivo_salida="pi_description_refinitiva"
+archivo_salida="pi_description_parcial"
 
 i=0
 
 while read -n 1 caracter
+
+    if [[ "$i" -eq 5000 ]]; then
+        break
+    fi
 do
     case $caracter in
         1)
@@ -51,4 +55,4 @@ do
 
 done < "$archivo_entrada"
 
-git push
+#git push
